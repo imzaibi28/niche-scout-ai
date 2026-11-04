@@ -1,0 +1,48 @@
+body { background: #111; color: #eee; font-family: system-ui, sans-serif; margin: 0; padding: 0; }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { margin-bottom: 4px; }
+h2 { margin-top: 0; }
+.sub { color: #aaa; margin-top: 0; }
+.hint { color: #aaa; font-size: 14px; }
+.card { background: #1d1d1d; border: 1px solid #333; border-radius: 12px; padding: 20px; margin: 16px 0; }
+.resultCard { background: #1d1d1d; border: 1px solid #333; border-radius: 12px; padding: 16px 20px; margin: 12px 0; cursor: pointer; }
+.resultCard:hover { border-color: #7ed957; }
+.resultCard h3 { margin: 0 0 6px; font-size: 20px; }
+.resultCard p { margin: 4px 0; color: #ccc; }
+.badge { display: inline-block; background: #2a2a2a; border: 1px solid #444; border-radius: 20px; padding: 4px 10px; margin: 4px 4px 0 0; font-size: 13px; }
+.badge.pass { border-color: #7ed957; color: #a8e6a1; }
+.badge.fail { color: #ccc; }
+label { display: block; margin: 10px 0; font-size: 14px; color: #ccc; }
+input, select { display: block; width: 100%; box-sizing: border-box; background: #222; color: #eee; border: 1px solid #444; border-radius: 8px; padding: 10px; margin-top: 4px; font-size: 16px; }
+button { cursor: pointer; border: 0; border-radius: 8px; padding: 10px 16px; font-size: 15px; margin: 6px 6px 0 0; }
+button.primary { background: #7ed957; color: #111; font-weight: 700; }
+button.secondary { background: #2a2a2a; color: #eee; border: 1px solid #444; }
+.banner { background: #332a00; border: 1px solid #665500; border-radius: 8px; padding: 12px; margin: 12px 0; }
+.bar { background: #222; height: 12px; border-radius: 6px; overflow: hidden; }
+#progressBar { background: #7ed957; height: 12px; width: 0%; }
+pre { white-space: pre-wrap; word-break: break-word; background: #0d0d0d; padding: 12px; border-radius: 8px; max-height: 200px; overflow: auto; font-size: 13px; }
+.tabs { margin-top: 16px; }
+.tabBtn { background: #222; color: #ccc; }
+.tabBtn.active { background: #7ed957; color: #111; font-weight: 700; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+td, th { text-align: left; padding: 8px 6px; border-bottom: 1px solid #333; font-size: 14px; }
+a { color: #8ecbff; }
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+.verdict { background: #222; border-left: 4px solid #7ed957; padding: 12px 16px; border-radius: 0 8px 8px 0; }
+details { margin-top: 12px; color: #ccc; }
+summary { cursor: pointer; font-weight: 600; }
+
+.brief-text h4 { margin: 14px 0 4px; font-size: 15px; }
+.brief-text p { margin: 3px 0; line-height: 1.45; }
+
+/* Judge strip (submission demo intro) */
+.judgeStrip { background: #1d1d1d; border: 1px solid #3a4a2f; border-left: 4px solid #7ed957; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+.judgeStrip p { margin: 6px 0; line-height: 1.5; }
+.museMark { color: #c4b5fd; font-weight: 600; }
+/* Assessment panels: heuristic (neutral) vs Muse Spark (purple accent) */
+.panel { border: 1px solid #333; border-radius: 12px; padding: 14px 16px; margin: 14px 0; background: #1a1a1a; }
+.panel p { line-height: 1.5; }
+.panelLabel { margin: 0 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; color: #aaa; font-weight: 700; }
+.panel-muse { border-color: #5b4a8a; border-left: 4px solid #8b5cf6; background: #1d1830; }
+.panel-muse .panelLabel { color: #c4b5fd; }
