@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Niche Scout AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Niche Scout AI</h1>
+  <p class="sub">Find a low-competition niche, check if it can win, and get a build plan.</p>
+  <section class="judgeStrip" aria-label="About this demo">
+    <p><strong>What this is:</strong> Niche Scout AI finds low-competition website niches and proves &mdash; with search-volume and SERP-authority data &mdash; whether a new site can actually win. This hosted demo shows one real, validated agent run: <strong>Mexico &middot; Spanish &middot; calculators (October 2026)</strong>.</p>
+    <p><strong>How to read it:</strong> every niche is assessed by the agent&rsquo;s rules &mdash; the score and the two gate badges on each card (search volume, weak sites in the top 10). Inside one niche&rsquo;s Overview you will also find a <span class="museMark">&#10022; Muse Spark verdict</span>: a plain-language judgment written by Muse Spark from the same evidence, generated live during validation and saved.</p>
+    <p class="hint">Demo mode uses saved results only &mdash; no live searches and no live model calls happen here. Live research runs in the local version (see the demo video).</p>
+  </section>
+  <div id="sampleBanner" class="banner" hidden>Saved demo data — the validated October 2026 run. Live searches run in the local version.</div>
+
+  <!-- STEP 1: SEARCH -->
+  <section id="searchSection" class="card">
+    <h2>1. Search</h2>
+    <form id="searchForm">
+      <label>Country <select id="country">
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Chile">Chile</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Czechia">Czechia</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Mexico" selected>Mexico</option>
+        <option value="Peru">Peru</option>
+        <option value="Poland">Poland</option>
+        <option value="Romania">Romania</option>
+        <option value="Spain">Spain</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="United States">United States</option>
+      </select></label>
+      <label>Language <select id="language">
+        <option value="Czech">Czech</option>
+        <option value="English">English</option>
+        <option value="Hungarian">Hungarian</option>
+        <option value="Polish">Polish</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Romanian">Romanian</option>
+        <option value="Spanish" selected>Spanish</option>
+        <option value="Ukrainian">Ukrainian</option>
+      </select></label>
+      <label>Interest <input id="interest" placeholder="calculators" value="calculators"></label>
+      <button type="submit" class="primary">Search</button>
+      <button type="button" id="demoBtn" class="secondary">Show validated niches</button>
+    </form>
+    <p class="hint">Hosted demo: this shows a real, validated agent run (Mexico · Spanish · calculators). Fresh live searches run in the local version, which uses the builder's own API keys and KWscanner login — those are never hosted.</p>
+    <details>
+      <summary>Advanced options</summary>
+      <label>Volume minimum <input id="volumeMin" type="number" value="50000"></label>
+      <label>DR&lt;20 count minimum <input id="drMin" type="number" value="3"></label>
+      <label>Filter
+        <select id="filterSel">
+          <option value="all">All niches</option>
+          <option value="both">Pass both filters</option>
+          <option value="volume">Volume pass</option>
+          <option value="authority">Authority pass</option>
+          <option value="favorites">Favorites</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sortSel">
+          <option value="score">Score</option>
+          <option value="volume">Volume</option>
+          <option value="dr">Weak sites</option>
+          <option value="revenue">Revenue</option>
+        </select>
+      </label>
+      <p>
+        <button type="button" id="exportBtn" class="secondary">Export CSV</button>
+        <button type="button" id="historyBtn" class="secondary">Past searches</button>
+        <button type="button" id="compareToggleBtn" class="secondary">Compare mode: off</button>
+      </p>
+      <div id="historyList"></div>
+    </details>
+  </section>
+
+  <!-- LIVE PROGRESS: only a bar + stage, log hidden -->
+  <section id="progressSection" class="card" hidden>
+    <h2>Searching…</h2>
+    <p id="progressText">Starting…</p>
+    <div class="bar"><div id="progressBar"></div></div>
+    <details><summary>Show log</summary><pre id="progressLog"></pre></details>
+  </section>
+
+  <!-- STEP 2: RESULTS -->
+  <section id="resultsSection" hidden>
+    <h2>2. Results</h2>
+    <p id="resultsCount"></p>
+    <div id="results"></div>
+    <div id="compareBox"></div>
+  </section>
+
+  <!-- STEP 3: DETAIL, one niche at a time, in tabs -->
+  <section id="detailSection" class="card" hidden>
+    <button id="backBtn" class="secondary">← Back to results</button>
+    <div id="detail"></div>
+    <div class="tabs">
+      <button class="tabBtn active" data-tab="overview">Overview</button>
+      <button class="tabBtn" data-tab="evidence">Top sites</button>
+      <button class="tabBtn" data-tab="plan">Build plan</button>
+      <button class="tabBtn" data-tab="domains">Domains</button>
+    </div>
+    <div id="tabOverview"></div>
+    <div id="tabEvidence" hidden></div>
+    <div id="tabPlan" hidden></div>
+    <div id="tabDomains" hidden></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
