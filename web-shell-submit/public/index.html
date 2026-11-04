@@ -21,8 +21,31 @@
   <section id="searchSection" class="card">
     <h2>1. Search</h2>
     <form id="searchForm">
-      <label>Country <input id="country" placeholder="Mexico" value="Mexico"></label>
-      <label>Language <input id="language" placeholder="Spanish" value="Spanish"></label>
+      <label>Country <select id="country">
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Chile">Chile</option>
+        <option value="Colombia">Colombia</option>
+        <option value="Czechia">Czechia</option>
+        <option value="Hungary">Hungary</option>
+        <option value="Mexico" selected>Mexico</option>
+        <option value="Peru">Peru</option>
+        <option value="Poland">Poland</option>
+        <option value="Romania">Romania</option>
+        <option value="Spain">Spain</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="United States">United States</option>
+      </select></label>
+      <label>Language <select id="language">
+        <option value="Czech">Czech</option>
+        <option value="English">English</option>
+        <option value="Hungarian">Hungarian</option>
+        <option value="Polish">Polish</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Romanian">Romanian</option>
+        <option value="Spanish" selected>Spanish</option>
+        <option value="Ukrainian">Ukrainian</option>
+      </select></label>
       <label>Interest <input id="interest" placeholder="calculators" value="calculators"></label>
       <button type="submit" class="primary">Search</button>
       <button type="button" id="demoBtn" class="secondary">Show validated niches</button>

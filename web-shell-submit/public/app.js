@@ -25,6 +25,9 @@ function showResults(niches, title) {
   $("resultsSection").hidden = false;
   $("detailSection").hidden = true;
   $("resultsCount").textContent = `${list.length} of ${niches.length} shown. Click a niche to see its details.`;
+  if (niches.length === 0) {
+    $("resultsCount").textContent = "No saved run for this selection in the hosted demo — the validated demo run is Mexico · Spanish · calculators. Choose those to explore it; the local version runs live searches for any country and language.";
+  }
   $("results").innerHTML = "";
   list.forEach((n) => {
     const div = document.createElement("div");
