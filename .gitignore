@@ -1,21 +1,9 @@
-# deps
-node_modules/
-
-# secrets — NEVER commit
 .env
-.env.local
-
-# local run state — never commit session cookies
-data/cache/
-data/kwscanner-session.json
-data/kwscanner-dom-map.txt
-
-# run outputs — uncomment if you want reports in the repo
-# data/report-*.md
-# data/opportunities-*.csv
-# data/opportunities-*.json
-# data/diff-*.md
-
-# OS / editor
-.DS_Store
-*.log
+node_modules/
+data/outcomes.json
+data/favorites.json
+data/domain-cache.json
+data/live-result.json
+data/live-history/
+data/search-history.json
+data/live-search.log
